@@ -1,20 +1,30 @@
-<!-- <h1> {{ message }} </h1>
-<h1> Hello Movie {{ id }} </h1> -->
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 
-<!DOCTYPE html>
-<html>
+<!-- Content block -->
+{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title> Welcome to the best Movie Review website </title>
-    {% endif %}
-</head>
 
-<body>
+<!-- News headlines -->
+<br><br><br><br>
+<div id="#">
+    <div class="container">
+        <h4 class="ui horizontal divider header">
+            <i class="newspaper icon" style="color: blue"></i>
+            Top news sources
+        </h4>
+        <br>
+    </div>
 
-</body>
+    <div class="container">
 
-</html>
+        <div class="row">
+            {{ macro.displaySourcesList(source)}}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock%}
