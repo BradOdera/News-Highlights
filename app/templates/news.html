@@ -1,0 +1,17 @@
+{% import 'macros.html' as macro%}
+{% extends 'base.html'%}
+
+
+{% block content%}
+<br>
+<br>
+<br>
+<div class="container">
+    <a class="ui blue tag label" style="margin-left: -1%">{{ heading }} Top Headlines</a>
+</div><br>
+<div class="container">
+    <div class="row">
+        {{ macro.showArticles(article)}}
+    </div>
+</div>
+{% endblock %}
