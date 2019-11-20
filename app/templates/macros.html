@@ -2,15 +2,14 @@
 {% for sources in sources%}
 
 
-            <div class="center aligned header"> {{sources.name}}</div>
+    <div class="center aligned header"> {{sources.name}}</div>
             
-                <p>{{sources.description | truncate(88)}}</p>
-            </div>
-
+        <p>{{sources.description | truncate(88)}}</p>
+    </div>
         
-            <div class="center aligned author">
-            <a href="{{sources.url}}" style="color: blue"> Visit <i class="linkify icon" src=""></i></a>
-            </div>
+    <div class="center aligned author">
+        <a href="{{sources.url}}" style="color: blue"> Visit <i class="linkify icon" src=""></i></a>
+    </div>
     
 
 {% endfor %}
