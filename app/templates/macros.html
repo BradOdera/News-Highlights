@@ -2,8 +2,11 @@
 {% for sources in sources%}
 
 <style>
-    div{
+   div{
         padding: 2%;
+    }
+    .btn{
+        border-radius:20px;
     }
 </style>
 <div class="col-md-3">
@@ -14,7 +17,9 @@
         </div>
             
         <div class="text-center">
-            <a href="{{sources.url}}" style="color: blue"> Visit</a>
+                <button type="button" class="btn btn-warning">
+                    <a href="{{sources.url}}" style="color: black"> Visit</a>
+                </button>
         </div>
     </div>
 </div>
