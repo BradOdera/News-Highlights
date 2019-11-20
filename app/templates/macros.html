@@ -1,48 +1,18 @@
-{% macro displaySourcesList(sources_list) %}
+{% macro displaySourcesList(sources) %}
+{% for sources in sources%}
 
-{% for news in sources_list %}
 
-<div class="col-md-3">
-
-    <div class="ui card ">
-        <div class="content">
-            <div class="center aligned header"> {{news.name}}</div>
-            <div class="center aligned description">
-                <p>{{news.description | truncate(88)}}</p>
+            <div class="center aligned header"> {{sources.name}}</div>
+            
+                <p>{{sources.description | truncate(88)}}</p>
             </div>
-        </div>
-        <div class="extra content">
+
+        
             <div class="center aligned author">
-            </div> <a href="/sources/{{news.id}}" style="color: blue"> Visit <i class="linkify icon" src=""></i></a>
-        </div>
-    </div>
-    <br>
-</div>
+            <a href="{{sources.url}}" style="color: blue"> Visit <i class="linkify icon" src=""></i></a>
+            </div>
+    
 
 {% endfor %}
 
-{% endmacro %}
-
-{% macro showArticles(articles_list) %}
-
-{% for articles in articles_list %}
-<div class="col-sm-6">
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters" style="padding: 0px;">
-            <div class="col-md-6">
-                <img src="{{articles.image}}" class="card-img" alt="...">
-            </div>
-            <div class="col-md-6">
-                <div class="card-body">
-                    <h5 class="card-title">{{articles.title}}</h5>
-                    <p class="card-text">{{articles.description}} <a href="{{articles.url}}"
-                            target='_blank'>Readmore</a></p>
-                    <p class="card-text"><small class="text-muted">Last updated {{articles.publishedAt}}</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-{%endfor%}
 {% endmacro %}

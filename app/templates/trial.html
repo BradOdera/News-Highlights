@@ -1,0 +1,13 @@
+
+
+{%block content%}
+
+{%for sources in sources%}
+<p>{{sources.name}}</p>
+<p>{{sources.description}}</p>
+
+<a href="/articles/{{sources.id}}">Visit</a>
+
+{%endfor%}
+
+{%endblock%}
