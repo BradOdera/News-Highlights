@@ -1,17 +1,23 @@
 {% macro displaySourcesList(sources) %}
 {% for sources in sources%}
 
-
-    <div class="center aligned header"> {{sources.name}}</div>
+<style>
+    div{
+        padding: 2%;
+    }
+</style>
+<div class="col-md-3">
+    <div class="card">
+        <div class="text-center text-danger"> {{sources.name}}</div>
+        <div class="text-center">
+            <p>{{sources.description | truncate(90)}}</p>
+        </div>
             
-        <p>{{sources.description | truncate(88)}}</p>
+        <div class="text-center">
+            <a href="{{sources.url}}" style="color: blue"> Visit</a>
+        </div>
     </div>
-        
-    <div class="center aligned author">
-        <a href="{{sources.url}}" style="color: blue"> Visit <i class="linkify icon" src=""></i></a>
-    </div>
-    
-
+</div>
 {% endfor %}
 
 {% endmacro %}

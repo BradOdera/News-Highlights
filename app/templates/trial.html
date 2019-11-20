@@ -1,3 +1,5 @@
+{%extends 'base.html'%}
+{% import 'macros.html' as macro %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,43 +7,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-    <title> {{ title }} </title>
-    {% else %}
+    <!-- {% if title %} -->
+    <!-- <title> {{ title }} </title> -->
+    <!-- {% else %} -->
     <title>News Highlights</title>
-    {% endif %}
+    <!-- {% endif %} -->
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
 
 </head>
 
 <body>
-        <!-- navbar block  -->
+    
+        
         {% block navbar %}
         {% include 'navbar.html' %}
         {% endblock %}
 
-        {%block content%}
-
-        {%for sources in sources%}
-        <p>{{sources.name}}</p>
-        <p>{{sources.description}}</p>
         
-        <a href="/articles/{{sources.id}}">Visit</a>
+            
+       
+        <div class="container">
+            <div class="row">
+                
+                {% block content %}
+                    {{ macro.displaySourcesList(sources)}}
+                {%endblock%}
+                
+            </div>
+        </div>
         
-        {%endfor%}
         
-        {%endblock%}
 
 
     <!-- scripts -->

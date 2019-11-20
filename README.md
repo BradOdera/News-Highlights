@@ -8,7 +8,7 @@ This is a web based application that shows news higlights from top news sights
 * No web dependencies needed.
 * Run in web
 ## Known Bugs
-None at the moment
+Page loads up slowly
 ## Technologies Used
 Python3.6<br>
 Heroku<br>
